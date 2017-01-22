@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+
+
+<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+<link rel="stylesheet" type="text/css" href="../../css/style.css" /> 
+<script type="text/javascript" src="../../js/jquery.min.js"></script>
+
+
+<script type="text/javascript">
+
+
+$(function(){
+
+	$("#one").bind("change",function(){
+	
+		$("#two").empty();
+	
+		$.post("demo1_json.jsp",{"province":$("#one option:selected").val()},function(data){
+	
+		var $dd = eval("("+data+")");
+	
+		$.each($dd,function(index,city){
+		
+			$("<option value='"+city.id+"'>"+city.provinceName+"</option>").appendTo($("#two"));
+		
+		});
+	
+	});
+	
+	});
+	
+});
+</script>
+</head>
+<body>
+	<div id="div" >
+		<form id="form">
+			<select id="one">
+				<option value='0'>请选择</option>
+				<option value='1'>河南</option>
+				<option value='2'>湖南</option>
+				<option value='3'>河北</option>
+			</select>
+			<select id="two">
+				<option value='0'>请选择</option>
+			</select>
+		</form>
+		
+		
+		
+	</div>
+		
+	
+</body>
+</html>

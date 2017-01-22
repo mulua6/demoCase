@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+
+<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+<link rel="stylesheet" type="text/css" href="../../css/style.css" /> 
+<script type="text/javascript" src="../../js/jquery.min.js"></script>
+<script type="text/javascript" src="../../js/jquery.easyui.min.js"></script>
+
+<script type="text/javascript">
+
+
+$(function(){
+
+	
+	
+});
+
+function fn1(){
+	alert($("#form1 :hidden").val());
+}
+
+function fn2(){
+	//alert($("#form2 :password").val());
+	alert($("#form2 input[type='password']").val());
+	$("#form1 input[type='hidden']")
+}
+
+</script>
+
+
+</head>
+<body>
+
+	<p>
+		<button onclick="fn1()">获取隐藏的书id</button>
+		
+		<button onclick="fn2()">获密码</button>
+	</p>
+	<div >
+		
+		<form action="" id="form1">
+			书名：<input type="text" name="bookName"/><br/>
+			价格：<input type="text" name="price"/><br/>
+			<input type="hidden" name="bookId" value="001"/><br/>
+			<div class="hide">隐藏的div</div>
+			<input type="submit" value="提交"/>
+		</form>
+		
+
+		<form action="" id="form2">
+			用户名：<input type="text" name="username"/><br/>
+			密码：<input type="password" name ="password" value="pwd123"/><br/>
+			<input type="submit" value="提交"/>
+		</form>
+	</div>
+	
+	
+	
+	
+	
+	
+		$(A).append(B)
+		$(A).appendTo(B)
+		$(A).prepend(B)
+		$(A).prependTo(B)
+		
+		$(A).after(B)
+		$(A).insertAfter(B)
+		$(A).before(B)
+		$(A).insertBefore(B)
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+
+<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+<script type="text/javascript" src="../../js/jquery.min.js"></script>
+<script type="text/javascript" src="../../js/jquery.easyui.min.js"></script>
+
+<script type="text/javascript">
+
+
+$(function(){
+
+	$("#tab").tabs({
+	
+		width:400,
+		height:300
+	});
+
+});
+
+function addTab(title){
+
+$("#tab").tabs("add",{
+
+title:title,
+content:title
+
+});
+
+};
+
+function addOrSelectTabs(title){
+
+if($("#tab").tabs("exists",title)){
+
+	$("#tab").tabs("select",title);
+}else{
+
+	$("#tab").tabs("add",{
+		title:title,
+		content:title
+	});
+}
+
+}
+
+
+function firstTab(){
+$("#tab").tabs("select",0);
+$("#tab").tabs("getTab",0).panel({href:"status.jsp"});
+
+}
+
+</script>
+
+
+</head>
+<body>
+<div>
+<button onclick="firstTab()">首页</button>
+<button onclick="addOrSelectTabs('科技')">科技</button>
+<button onclick="addOrSelectTabs('体育')">体育</button>
+</div>
+<div id="tab">
+	<div title="首页">欢迎光临</div>
+</div>
+
+
+
+</body>
+</html>

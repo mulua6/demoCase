@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+
+
+<link rel="stylesheet" type="text/css" href="../../css/style.css" /> 
+<script type="text/javascript" src="../../js/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+
+$(function(){
+
+	//$("tbody > :first-child").css("background","red");
+	
+	//$("ul :first-child").css("background","red");
+	//$("ul li:first-child").css("background","red");
+	
+	
+});
+
+function fn1(){
+	$("ul li:first").css("background","red");
+}
+
+function fn2(){
+	$("ul li:first-child").css("background","red");
+}
+
+
+function fn3(){
+	$("ul :first").css("background","red");
+}
+function fn4(){
+	$("ul :first-child").css("background","red");
+}
+
+
+
+function fn5(){
+	$("div :first").css("background","red");
+}
+function fn6(){
+	$("div *:first-child").css("background","red");
+}
+function fn7(){
+	$("div:first").css("background","red");
+}
+function fn8(){
+	//$("div >:first-child").css("background","red");
+	
+	//alert($("div *").size());
+	
+	$("div > :first-child").each(function(){
+	
+		alert($(this).prop("tagName"));
+	
+	
+	});
+}
+</script>
+</head>
+<body>
+
+<p>
+
+	<button onclick="fn1()">$("ul li:first") 变成红色</button>
+	<button onclick="fn2()">$("ul li:first-child") 变成红色</button>
+	<!-- <button onclick="fn3()">$("ul :first") 变成红色</button>
+	<button onclick="fn4()">$("ul :first-child") 变成红色</button> -->
+	
+	<!-- <button onclick="fn7()">$("div:first") 变成红色</button>
+	<button onclick="fn5()">$("div :first") 变成红色</button>
+	<button onclick="fn6()">$("div :first-child") 变成红色</button>
+	<button onclick="fn8()">$("div > :first-child") 变成红色</button>
+	<button onclick="fn4()">$("ul :first-child") 变成红色</button>
+	<button onclick="fn4()">$("ul :first-child") 变成红色</button> -->
+
+</p>
+
+
+		<div >
+			<ul>
+				<li>苹果</li>
+				<li>香蕉</li>
+				<li>橘子</li>
+			</ul>
+			
+			<ul>
+				<li>苹果2</li>
+				<li>香蕉2</li>
+				<li>橘子2</li>
+			</ul>
+		</div>
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>

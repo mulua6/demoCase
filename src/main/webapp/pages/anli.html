@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+
+<link rel="stylesheet" type="text/css" href="../themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="../themes/icon.css">
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/jquery.easyui.min.js"></script>
+
+<script type="text/javascript">
+
+$(function(){
+
+$("#dd").dialog({
+
+title:'添加用户',
+width:400,
+height:400,
+closed:true,
+
+toolbar:"#toolbar",
+buttons:"#buttons"
+});
+});
+
+
+
+function openWin(){
+	$("#dd").dialog("open");
+}
+function closeWin(){
+	$("#dd").dialog("close");
+}
+
+
+function addStu(){
+
+$("<label >用户名:</label>").appendTo($("#form"));
+$("<input name='username' type='text'></input>").appendTo($("#form"));
+
+}
+
+function deleteStu(){
+$("#form").children().remove();
+}
+
+
+function saveStu(){
+
+
+
+	$.post("saveStu.jsp",{"username":$("#form input").val()},function(data){
+	
+		if(data=="ok"){
+		
+			$.messager.alert("提示","保存成功","info");
+			$("#list ul").append("<li>"+$("#form input").val()+"</li>");
+			closeWin();
+		}else{
+			$.messager.alert("提示","保存失败","error");
+		}
+	
+	});
+
+}
+</script>
+
+</head>
+<body>
+
+
+<button onclick="openWin()">打开</button>
+<button onclick="closeWin()">关闭</button>
+<div id="list">
+	<ul>
+	
+	</ul>
+</div>
+
+<div id="dd" >
+	<form id="form"></form>
+</div>
+
+<div id="toolbar">
+<a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-save'"  onclick="addStu()">新增</a>
+<a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-remove'" onclick="deleteStu()">删除</a>
+</div>
+
+<div id="buttons">
+<a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-save'" onclick="saveStu()">保存</a>
+<a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-cancel'" onclick="closeWin()">取消</a>
+
+</div>
+</body>
+</html>

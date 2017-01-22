@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+
+
+<link rel="stylesheet" type="text/css" href="../../css/style.css" /> 
+<script type="text/javascript" src="../../js/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+
+$(function(){
+	//$("#div").attr("class","open");
+});
+
+
+function fn1(){
+
+	//根据当前的状态设置点击后的状态
+	if($("#div").hasClass("open")){
+		$("#div").attr("class","close");
+	}else{
+		$("#div").attr("class","open");
+	}
+}
+function fn2(){
+
+	//根据当前的状态设置点击后的状态
+	if($("#div").hasClass("open")){
+		$("#div").removeClass();
+		$("#div").addClass("close");
+	}else{
+		$("#div").removeClass();
+		$("#div").addClass("open");
+	}
+}
+function fn3(){
+
+	//切换样式
+	$("#div").toggleClass("close");
+}
+
+</script>
+</head>
+<body>
+
+<p>
+
+	<button onclick="fn1()">开关1</button>
+	<button onclick="fn2()">开关2</button>
+	<button onclick="fn3()">开关3</button>
+</p>
+		<div  id="div" class="open"></div>
+
+</body>
+</html>
